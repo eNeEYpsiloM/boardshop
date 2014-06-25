@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../WEB-INF/templates/padrao.xhtml">
+	<ui:define name="titulo">Cadastrar-Editar</ui:define>
+	<ui:define name="conteudo">
+		<div class="container">
+			<div class="row">
+				<div class="box">
+					<div class="col-lg-12">
+						<hr />
+						<h2 class="intro-text text-center">
+							Cadastrar/Editar <strong>Pranchas</strong>
+						</h2>
+						<hr />
+					</div>
+					<h:messages></h:messages>
+					<h:form role="form">
+						<h:panelGrid rendered="#{!empty pranchaMB.prancha.id}">
+							<div class="form-group">
+								<h:outputLabel value="Código" />
+								<h:inputText styleClass="form-control" readonly="true"
+									value="#{pranchaMB.prancha.id}" />
+							</div>
+						</h:panelGrid>
+						<h:inputHidden value="#pranchaMB.prancha.id}" />
+						<div class="form-group">
+							<h:outputLabel value="Loja" />
+							<h:selectOneMenu styleClass="form-control"
+								value="#{pranchaMB.prancha.filial}">
+								<f:selectItem itemLabel="-- Escolha o país da filial --" />
+								<f:selectItems value="#{filialMB.filiais}" var="filial"
+									itemLabel="#{filial.pais}" itemValue="#{filial}" />
+							</h:selectOneMenu>
+						</div>
+						<div class="form-group">
+				<h:outputLabel value="Imagem" />
+				<h:inputFile value="#{pranchaMB.imagem}">
+					<f:validator validatorId="br.senai.sc.ti20122n.pw.boardshop.ney.validator.ImagemValidator" />
+				</h:inputFile>
+				<h:inputHidden value="#{pranchaMB.prancha.imagem}" />
+				<h:graphicImage styleClass="img-responsive" rendered="#{!empty {pranchaMB.prancha.imagem}"
+					value="#{{pranchaMB.getCaminhoRelativo({pranchaMB.prancha.imagem)}" />
+			</div>
+						<div class="form-group">
+							<h:outputLabel value="Modelo" />
+							<h:inputText styleClass="form-control"
+								value="#{pranchaMB.prancha.modelo}" />
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="Medidas" />
+							<h:inputText styleClass="form-control"
+								value="#{pranchaMB.prancha.medidas}" />
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="Valor (R$)" />
+							<h:inputText styleClass="form-control"
+								value="#{pranchaMB.prancha.valor}" />
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="Descrição (Resumo)" />
+							<h:inputText styleClass="form-control"
+								value="#{pranchaMB.prancha.descricaoMin}" />
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="Descrição (Completa)" />
+							<h:inputText styleClass="form-control"
+								value="#{pranchaMB.prancha.descricaoMax}" />
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="Data Disponibilidade" />
+							<h:inputText styleClass="form-control"
+								value="#{pranchaMB.prancha.dataDisponibilidade}">
+								<f:convertDateTime locale="pt_BR" />
+							</h:inputText>
+						</div>
+						<h:commandButton styleClass="btn btn-success" value="Salvar"
+							action="#{pranchaMB.salvar}" />
+						<button type="reset" class="btn btn-default">Restaurar</button>
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

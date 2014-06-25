@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="WEB-INF/templates/padrao.xhtml">
+	<ui:define name="titulo">Home</ui:define>
+	<ui:define name="carousel">
+		<div class="row">
+			<div class="box">
+				<div class="col-lg-12 text-center">
+					<div id="carousel-example-generic" class="carousel slide">
+						<!-- Indicators -->
+						<ol class="carousel-indicators hidden-xs">
+							<li data-target="#carousel-example-generic" data-slide-to="0"
+								class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+						</ol>
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+
+							<div class="item active">
+								<h:graphicImage class="img-responsive img-full"
+									url="img/slide-1.jpg" title="Shaper modelando prancha" />
+							</div>
+							<div class="item">
+								<h:graphicImage class="img-responsive img-full"
+									url="img/slide-2.jpg" title="Prancha cortando a crista da onda" />
+							</div>
+							<div class="item">
+								<h:graphicImage class="img-responsive img-full"
+									url="/img/slide-3.jpg"
+									title="JJ Florence entubando com prancha" />
+							</div>
+						</div>
+						<!-- 							<div class="carousel-inner"> -->
+						<!-- 								<div class="item active">	 -->
+						<!-- 									<img class="img-responsive img-full" src="img/slide-1.jpg" -->
+						<!-- 										alt="" /> -->
+						<!-- 								</div> -->
+						<!-- 								<div class="item"> -->
+						<!-- 									<img class="img-responsive img-full" src="img/slide-2.jpg" -->
+						<!-- 										alt="" /> -->
+						<!-- 								</div> -->
+						<!-- 								<div class="item"> -->
+						<!-- 									<h:graphicImage class="img-responsive img-full" value="/img/slide-1.jpg" /> -->
+						<!-- 								</div> -->
+						<!-- 							</div> -->
+
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-example-generic"
+							data-slide="prev"> <span class="icon-prev"></span>
+						</a> <a class="right carousel-control"
+							href="#carousel-example-generic" data-slide="next"> <span
+							class="icon-next"></span>
+						</a>
+					</div>
+					<h2>
+						<small>Seja Bem Vindo a</small>
+					</h2>
+					<h1>
+						<span class="brand-name">Board Shop NM</span>
+					</h1>
+					<hr class="tagline-divider" />
+					<h2>
+						<small>By <strong>NM Surfboards Inc.</strong></small>
+					</h2>
+				</div>
+			</div>
+		</div>
+		<script>
+			// Activates the Carousel
+			$('.carousel').carousel({
+				interval : 5000
+			})
+		</script>
+	</ui:define>
+	<ui:define name="conteudo">
+		<div class="conteiner">
+			<div class="row">
+				<div class="box">
+					<div class="col-lg-12">
+						<hr />
+						<h2 class="intro-text text-center">
+							Faça a escolha certa e surfe com a <strong>prancha de
+								seus sonhos</strong>
+						</h2>
+						<hr />
+						<p>Nós utilizamos a última palavra em tecnologia aplicada ao surf
+							de alto desempenho, nossas pranchas são previamente shapeadas por
+							uma máquina para obter uma simetria perfeita e então ter o
+							acabamento exato pelas mãos de nossos shapers.</p>
+						<p>Visite nosso portfólio e escolha a prancha certa para seu
+							estilo de surf e praia preferida.</p>
+						<p>Temos o que você quer, no continente que você estiver.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
