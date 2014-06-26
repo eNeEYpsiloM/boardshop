@@ -3,6 +3,7 @@ package br.senai.sc.ti20122n.pw.boardshop.ney.mb;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -12,6 +13,7 @@ import br.senai.sc.ti20122n.pw.boardshop.ney.model.entity.Usuario;
 import br.senai.sc.ti20122n.pw.boardshop.ney.util.FacesContextUtil;
 
 @ManagedBean
+@SessionScoped
 public class LoginMB {
 	private Usuario usuarioLogado;
 	private Usuario usuarioForm;
