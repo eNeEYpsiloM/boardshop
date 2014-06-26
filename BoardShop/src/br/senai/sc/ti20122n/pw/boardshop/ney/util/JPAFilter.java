@@ -20,7 +20,7 @@ public class JPAFilter implements Filter {
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
 		entityManagerFactory = Persistence
-				.createEntityManagerFactory("BoardShopNM");
+				.createEntityManagerFactory("BoardShop");
 	}
 
 	@Override
