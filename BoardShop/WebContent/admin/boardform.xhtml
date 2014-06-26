@@ -20,7 +20,7 @@
 						<hr />
 					</div>
 					<h:messages></h:messages>
-					<h:form role="form">
+					<h:form role="form" enctype="multipart/form-data">
 						<h:panelGrid rendered="#{!empty pranchaMB.prancha.id}">
 							<div class="form-group">
 								<h:outputLabel value="Código" />
@@ -28,7 +28,7 @@
 									value="#{pranchaMB.prancha.id}" />
 							</div>
 						</h:panelGrid>
-						<h:inputHidden value="#pranchaMB.prancha.id}" />
+						<h:inputHidden value="#{pranchaMB.prancha.id}" />
 						<div class="form-group">
 							<h:outputLabel value="Loja" />
 							<h:selectOneMenu styleClass="form-control"
@@ -44,8 +44,8 @@
 					<f:validator validatorId="br.senai.sc.ti20122n.pw.boardshop.ney.validator.ImagemValidator" />
 				</h:inputFile>
 				<h:inputHidden value="#{pranchaMB.prancha.imagem}" />
-				<h:graphicImage styleClass="img-responsive" rendered="#{!empty {pranchaMB.prancha.imagem}"
-					value="#{{pranchaMB.getCaminhoRelativo({pranchaMB.prancha.imagem)}" />
+				<h:graphicImage styleClass="img-responsive" rendered="#{!empty pranchaMB.prancha.imagem}"
+					value="#{pranchaMB.getCaminhoRelativo(pranchaMB.prancha.imagem)}" />
 			</div>
 						<div class="form-group">
 							<h:outputLabel value="Modelo" />
