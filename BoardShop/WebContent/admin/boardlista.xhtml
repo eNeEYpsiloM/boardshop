@@ -7,7 +7,7 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <ui:composition template="../WEB-INF/templates/padrao.xhtml">
-	<ui:define name="titulo">Listar-Editar-Excluir</ui:define>
+	<ui:define name="titulo">Listar-Editar-Excluir Prancha</ui:define>
 	<ui:define name="conteudo">
 		<div class="container">
 			<div class="row">
@@ -15,7 +15,7 @@
 					<div class="col-lg-12">
 						<hr />
 						<h2 class="intro-text text-center">
-							Listar/Editar/Excluir <strong>Pranchas</strong>
+							Listar/Editar/Excluir <strong>Prancha</strong>
 						</h2>
 						<hr />
 					</div>
@@ -27,26 +27,28 @@
 								<h:outputText value="#{prancha.id}" />
 							</h:column>
 							<h:column>
-							<f:facet name="header">Imagem</f:facet>
-							<h:graphicImage styleClass="img-responsive"
-						rendered="#{!empty prancha.imagem}"
-						value="#{pranchaMB.getCaminhoRelativo(prancha.imagem)}" />
+								<f:facet name="header">Imagem</f:facet>
+								<div style="width: 55px;">
+									<h:graphicImage styleClass="img-responsive"
+										rendered="#{!empty prancha.imagem}"
+										value="#{pranchaMB.getCaminhoRelativo(prancha.imagem)}" />
+								</div>
 							</h:column>
 							<h:column>
-								<f:facet name="header">Modelo</f:facet>
-								<h:outputText value="#{prancha.modelo}" />
+								<f:facet name="header">Medidas</f:facet>
+								<h:outputText value="#{prancha.medidas}" />
 							</h:column>
 							<h:column>
 								<f:facet name="header">Valor (R$)</f:facet>
 								<h:outputText value="#{prancha.valor}" />
 							</h:column>
 							<h:column>
-								<f:facet name="header">Filial (nome)</f:facet>
-								<h:outputText value="#{prancha.filial.nome}" />
+								<f:facet name="header">Modelo</f:facet>
+								<h:outputText value="#{prancha.linha.modelo}" />
 							</h:column>
 							<h:column>
-								<f:facet name="header">Filial (país)</f:facet>
-								<h:outputText value="#{prancha.filial.pais}" />
+								<f:facet name="header">Tipo Quilha</f:facet>
+								<h:outputText value="#{prancha.linha.tipoQuilha}" />
 							</h:column>
 							<h:column>
 								<f:facet name="header">Data Disponibilidade</f:facet>

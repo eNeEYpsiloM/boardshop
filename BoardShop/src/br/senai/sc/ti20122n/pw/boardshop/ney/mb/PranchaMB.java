@@ -20,13 +20,13 @@ public class PranchaMB {
 	private EntityManager entityManager;
 	private Part imagem;
 	private String imagemAntiga;
-	
+
 	@PostConstruct
 	private void init() {
 		prancha = new Prancha();
 		entityManager = FacesContextUtil.getEntityManager();
 	}
-	
+
 	public String getCaminhoRelativo(String nomeImagem) {
 		return ImagemUtil.getCaminhoRelativo(nomeImagem);
 	}
@@ -51,7 +51,7 @@ public class PranchaMB {
 	public void setPrancha(Prancha prancha) {
 		this.prancha = prancha;
 	}
-	
+
 	public Part getImagem() {
 		return imagem;
 	}
@@ -70,7 +70,7 @@ public class PranchaMB {
 
 	public String salvar() throws IOException {
 		imagemAntiga = prancha.getImagem();
-		prancha.setImagem(ImagemUtil.copiar(imagem,imagemAntiga));
+		prancha.setImagem(ImagemUtil.copiar(imagem, imagemAntiga));
 		entityManager.merge(prancha);
 		return "boardlista";
 	}
@@ -80,7 +80,7 @@ public class PranchaMB {
 		return "boardform";
 	}
 
-	public String excluir(Long id) {		
+	public String excluir(Long id) {
 		Prancha prancha = entityManager.find(Prancha.class, id);
 		entityManager.remove(prancha);
 		ImagemUtil.deletar(prancha.getImagem());

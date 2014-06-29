@@ -14,8 +14,7 @@ public class Prancha {
 	@GeneratedValue
 	private long id;
 	@ManyToOne
-	private Filial filial;
-	private String modelo;
+	private Linha linha;
 	private String medidas;
 	private double valor;
 	private String descricaoMin;
@@ -33,20 +32,12 @@ public class Prancha {
 		this.id = id;
 	}
 
-	public Filial getFilial() {
-		return filial;
+	public Linha getLinha() {
+		return linha;
 	}
 
-	public void setFilial(Filial filial) {
-		this.filial = filial;
-	}
-
-	public String getModelo() {
-		return modelo;
-	}
-
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
+	public void setLinha(Linha linha) {
+		this.linha = linha;
 	}
 
 	public String getMedidas() {
@@ -88,10 +79,11 @@ public class Prancha {
 	public void setDataDisponibilidade(Date dataDisponibilidade) {
 		this.dataDisponibilidade = dataDisponibilidade;
 	}
-	
+
 	public String getConteudo() {
 		return conteudo;
 	}
+
 	public void setConteudo(String conteudo) {
 		this.conteudo = conteudo;
 	}
@@ -99,6 +91,7 @@ public class Prancha {
 	public String getImagem() {
 		return imagem;
 	}
+
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
 	}

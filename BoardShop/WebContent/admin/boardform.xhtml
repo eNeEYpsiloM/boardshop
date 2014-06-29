@@ -15,7 +15,7 @@
 					<div class="col-lg-12">
 						<hr />
 						<h2 class="intro-text text-center">
-							Cadastrar/Editar <strong>Pranchas</strong>
+							Cadastrar/Editar <strong>Prancha</strong>
 						</h2>
 						<hr />
 					</div>
@@ -32,25 +32,22 @@
 						<div class="form-group">
 							<h:outputLabel value="Loja" />
 							<h:selectOneMenu styleClass="form-control"
-								value="#{pranchaMB.prancha.filial}">
-								<f:selectItem itemLabel="-- Escolha o país da filial --" />
-								<f:selectItems value="#{filialMB.filiais}" var="filial"
-									itemLabel="#{filial.pais}" itemValue="#{filial}" />
+								value="#{pranchaMB.prancha.linha}">
+								<f:selectItem itemLabel="-- Escolha o modelo de prancha ---" />
+								<f:selectItems value="#{linhaMB.linhas}" var="linha"
+									itemLabel="#{linha.modelo}" itemValue="#{linha}" />
 							</h:selectOneMenu>
 						</div>
 						<div class="form-group">
-				<h:outputLabel value="Imagem" />
-				<h:inputFile value="#{pranchaMB.imagem}">
-					<f:validator validatorId="br.senai.sc.ti20122n.pw.boardshop.ney.validator.ImagemValidator" />
-				</h:inputFile>
-				<h:inputHidden value="#{pranchaMB.prancha.imagem}" />
-				<h:graphicImage styleClass="img-responsive" rendered="#{!empty pranchaMB.prancha.imagem}"
-					value="#{pranchaMB.getCaminhoRelativo(pranchaMB.prancha.imagem)}" />
-			</div>
-						<div class="form-group">
-							<h:outputLabel value="Modelo" />
-							<h:inputText styleClass="form-control"
-								value="#{pranchaMB.prancha.modelo}" />
+							<h:outputLabel value="Imagem" />
+							<h:inputFile value="#{pranchaMB.imagem}">
+								<f:validator
+									validatorId="br.senai.sc.ti20122n.pw.boardshop.ney.validator.ImagemValidator" />
+							</h:inputFile>
+							<h:inputHidden value="#{pranchaMB.prancha.imagem}" />
+							<h:graphicImage styleClass="img-responsive"
+								rendered="#{!empty pranchaMB.prancha.imagem}"
+								value="#{pranchaMB.getCaminhoRelativo(pranchaMB.prancha.imagem)}" />
 						</div>
 						<div class="form-group">
 							<h:outputLabel value="Medidas" />

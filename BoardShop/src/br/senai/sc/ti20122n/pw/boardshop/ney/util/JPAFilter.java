@@ -16,7 +16,7 @@ import javax.servlet.annotation.WebFilter;
 @WebFilter(servletNames = "Faces Servlet")
 public class JPAFilter implements Filter {
 	EntityManagerFactory entityManagerFactory;
-	
+
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
 		entityManagerFactory = Persistence

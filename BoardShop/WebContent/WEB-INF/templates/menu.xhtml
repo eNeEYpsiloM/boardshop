@@ -21,6 +21,7 @@
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
+		<h:form>
 			<ul class="nav navbar-nav">
 				<li><h:link value="Home" outcome="/index" /></li>
 				<li><h:link value="Quem Somos" outcome="/quemsomos" /></li>
@@ -29,25 +30,26 @@
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Admin<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><h:link value="Cadastrar Filial"
-								outcome="/admin/filialform" /></li>
+						<li><h:link value="Cadastrar Linha de Prancha"
+								outcome="/admin/linhaform" /></li>
 						<li><h:link value="Cadastrar Prancha"
 								outcome="/admin/boardform" /></li>
-						<li><h:link value="Listar Filial"
-								outcome="/admin/filiallista" /></li>
+						<li><h:link value="Listar Linha de Prancha"
+								outcome="/admin/linhalista" /></li>
 						<li><h:link value="Listar Prancha"
 								outcome="/admin/boardlista" /></li>
-
 					</ul></li>
-				<h:form>
+			
+			
+				
 					<h:panelGroup rendered="#{loginMB.estaLogado()}">
 						<li><h:commandLink action="#{loginMB.fechar}" value="Sair" /></li>
 					</h:panelGroup>
 					<h:panelGroup rendered="#{!loginMB.estaLogado()}">
 						<li><h:link outcome="/login" value="Entrar" /></li>
 					</h:panelGroup>
-				</h:form>
-			</ul>
+				</ul>
+			</h:form>
 		</div>
 		<!-- /.navbar-collapse -->
 	</div>
