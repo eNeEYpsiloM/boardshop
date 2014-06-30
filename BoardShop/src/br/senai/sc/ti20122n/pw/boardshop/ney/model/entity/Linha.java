@@ -1,14 +1,19 @@
 package br.senai.sc.ti20122n.pw.boardshop.ney.model.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Linha {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@OneToMany(mappedBy="linha")
+	private List<Prancha> pranchas;
 	private String modelo;
 	private String tipoQuilha;
 
@@ -18,6 +23,14 @@ public class Linha {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public List<Prancha> getPranchas() {
+		return pranchas;
+	}
+
+	public void setPranchas(List<Prancha> pranchas) {
+		this.pranchas = pranchas;
 	}
 
 	public String getModelo() {

@@ -3,6 +3,7 @@ package br.senai.sc.ti20122n.pw.boardshop.ney.model.entity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
@@ -13,7 +14,7 @@ public class Prancha {
 	@Id
 	@GeneratedValue
 	private long id;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Linha linha;
 	private String medidas;
 	private double valor;

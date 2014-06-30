@@ -17,28 +17,28 @@
 						<hr />
 						<h2 class="intro-text text-center">
 							Modelos de <strong>Pranchas</strong>
-
 						</h2>
 						<hr />
 					</div>
 					<div class="col-lg-12 text-center">
 
-						<ui:repeat var="linha" value="#{linhaMB.linhas}">
+						<ui:repeat value="#{linhaMB.linhas}" var="linha">
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h:outputText value="#{linha.modelo}" />
+									<strong><h:outputText value="#{linha.modelo}" /></strong>
+									<div class="panel-body" style="width: 250px;">
+										<ui:repeat value="#{linha.pranchas}" var="prancha">
+											<h:graphicImage styleClass="img-responsive"
+												rendered="#{!empty prancha.imagem}"
+												value="#{pranchaMB.getCaminhoRelativo(prancha.imagem)}" />
+											<h:outputText value="#{prancha.medidas} - " />
+											<h:outputText value="#{linha.tipoQuilha} - " />
+											<h:outputText value="#{prancha.descricaoMin}" />
+										</ui:repeat>
+									</div>
 								</div>
-
 							</div>
 						</ui:repeat>
-
-						<!-- 					<div class="panel-body"> -->
-						<!-- 				<ui:repeat var="prancha" value="#{pranchaMB.pranchas}"> -->
-						<!-- 					<h:graphicImage styleClass="img-responsive" -->
-						<!-- 						rendered="#{!empty prancha.imagem}" -->
-						<!-- 						value="#{pranchaMB.getCaminhoRelativo(prancha.imagem)}" /> -->
-						<!-- 						</ui:repeat> -->
-						<!-- 				</div> -->
 
 						<a href="#" class="btn btn-default btn-lg">Leia Mais Sobre</a>
 						<hr />
