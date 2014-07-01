@@ -21,27 +21,30 @@
 						<hr />
 					</div>
 					<div class="col-lg-12 text-center">
-
 						<ui:repeat value="#{linhaMB.linhas}" var="linha">
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<strong><h:outputText value="#{linha.modelo}" /></strong>
-									<div class="panel-body" style="width: 250px;">
-										<ui:repeat value="#{linha.pranchas}" var="prancha">
-											<h:graphicImage styleClass="img-responsive"
-												rendered="#{!empty prancha.imagem}"
-												value="#{pranchaMB.getCaminhoRelativo(prancha.imagem)}" />
-											<h:outputText value="#{prancha.medidas} - " />
-											<h:outputText value="#{linha.tipoQuilha} - " />
-											<h:outputText value="#{prancha.descricaoMin}" />
-										</ui:repeat>
-									</div>
+									<strong><h:outputText
+											value="#{linha.modelo.toUpperCase()}" /></strong>
 								</div>
+								<ui:repeat value="#{linha.pranchas}" var="prancha">
+									<h:graphicImage styleClass="img-responsive"
+										rendered="#{!empty prancha.imagem}"
+										value="#{pranchaMB.getCaminhoRelativo(prancha.imagem)}" />
+									<h:outputText value="#{prancha.medidas} - " />
+									<h:outputText value="#{linha.tipoQuilha} - " />
+									<h:outputText value="#{prancha.descricaoMin} - Valor R$: " />
+									<h:outputText value="#{prancha.valor}" />
+									<br />
+									<h:form>
+										<h:commandLink
+											action="#{pranchaMB.mostrarDetalhes(prancha.id)}"
+											styleClass="btn btn-default btn-lg">Leia Mais Sobre</h:commandLink>
+									</h:form>
+									<hr />
+								</ui:repeat>
 							</div>
 						</ui:repeat>
-
-						<a href="#" class="btn btn-default btn-lg">Leia Mais Sobre</a>
-						<hr />
 					</div>
 					<div class="col-lg-12 text-center">
 						<ul class="pager">

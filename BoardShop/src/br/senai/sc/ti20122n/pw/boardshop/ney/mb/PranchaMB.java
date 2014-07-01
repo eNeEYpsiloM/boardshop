@@ -87,4 +87,9 @@ public class PranchaMB {
 		pranchas = null;
 		return "boardlista";
 	}
+
+	public String mostrarDetalhes(Long id) {
+		prancha = entityManager.find(Prancha.class, id);
+		return "detalhesprancha";
+	}
 }

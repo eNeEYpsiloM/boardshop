@@ -12,7 +12,7 @@ public class Linha {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@OneToMany(mappedBy="linha")
+	@OneToMany(mappedBy = "linha")
 	private List<Prancha> pranchas;
 	private String modelo;
 	private String tipoQuilha;
