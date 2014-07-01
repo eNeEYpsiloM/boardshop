@@ -28,16 +28,18 @@
 											value="#{linha.modelo.toUpperCase()}" /></strong>
 								</div>
 								<ui:repeat value="#{linha.pranchas}" var="prancha">
-									<h:graphicImage styleClass="img-responsive"
-										rendered="#{!empty prancha.imagem}"
-										value="#{pranchaMB.getCaminhoRelativo(prancha.imagem)}" />
+									<div style="width: 150px;">
+										<h:graphicImage styleClass="img-responsive"
+											rendered="#{!empty prancha.imagem}"
+											value="#{pranchaMB.getCaminhoRelativo(prancha.imagem)}" />
+									</div>
 									<h:outputText value="#{prancha.medidas} - " />
 									<h:outputText value="#{linha.tipoQuilha} - " />
 									<h:outputText value="#{prancha.descricaoMin} - Valor R$: " />
 									<h:outputText value="#{prancha.valor}" />
 									<br />
 									<h:form>
-									<br />
+										<br />
 										<h:commandLink
 											action="#{pranchaMB.mostrarDetalhes(prancha.id)}"
 											styleClass="btn btn-default btn-lg">Leia Mais Sobre</h:commandLink>

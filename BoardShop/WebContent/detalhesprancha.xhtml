@@ -20,48 +20,61 @@
 						<hr />
 					</div>
 					<h:messages></h:messages>
-					<h:form>
-						<h:dataTable value="#{pranchaMB.pranchas}" var="prancha"
-							styleClass="table">
-							<h:column>
-								<f:facet name="header">Código</f:facet>
-								<h:outputText value="#{prancha.id}" />
-							</h:column>
-							<h:column>
-								<f:facet name="header">Imagem</f:facet>
-								<div style="width: 100px;">
-									<h:graphicImage styleClass="img-responsive"
-										rendered="#{!empty prancha.imagem}"
-										value="#{pranchaMB.getCaminhoRelativo(prancha.imagem)}" />
-								</div>
-							</h:column>
-							<h:column>
-								<f:facet name="header">Medidas</f:facet>
+
+					<h:form role="form" enctype="multipart/form-data">
+						<h:panelGrid rendered="#{!empty pranchaMB.prancha.id}">
+							<div class="form-group">
+								<h:outputLabel value="Código" />
+								<h:inputText styleClass="form-control" readonly="true"
+									value="#{pranchaMB.prancha.id}" />
+							</div>
+						</h:panelGrid>
+						<h:inputHidden value="#{pranchaMB.prancha.id}" />
+						<div class="form-group">
+							<h:outputLabel value="Imagem Prancha Selecionada" />
+							<h:graphicImage styleClass="img-responsive"
+								rendered="#{!empty prancha.imagem}"
+								value="#{pranchaMB.getCaminhoRelativo(prancha.imagem)}" />
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="Medidas:" />
+							<div class="form-group">
 								<h:outputText value="#{prancha.medidas}" />
-							</h:column>
-							<h:column>
-								<f:facet name="header">Detalhes</f:facet>
+							</div>
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="Descrição Completa:" />
+							<div class="form-group">
 								<h:outputText value="#{prancha.descricaoMax}" />
-							</h:column>
-							<h:column>
-								<f:facet name="header">Valor (R$)</f:facet>
+							</div>
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="Valor (R$):" />
+							<div class="form-group">
 								<h:outputText value="#{prancha.valor}" />
-							</h:column>
-							<h:column>
-								<f:facet name="header">Modelo</f:facet>
+							</div>
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="Modelo de Prancha:" />
+							<div class="form-group">
 								<h:outputText value="#{prancha.linha.modelo}" />
-							</h:column>
-							<h:column>
-								<f:facet name="header">Quilha</f:facet>
+							</div>
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="Tipo de Quilha:" />
+							<div class="form-group">
 								<h:outputText value="#{prancha.linha.tipoQuilha}" />
-							</h:column>
-							<h:column>
-								<f:facet name="header">Disponibilidade</f:facet>
+							</div>
+						</div>
+						<div class="form-group">
+							<h:outputLabel value="Data de Disponibilidade Prevista:" />
+							<div class="form-group">
 								<h:outputText value="#{prancha.dataDisponibilidade}">
 									<f:convertDateTime locale="pt_BR" />
 								</h:outputText>
-							</h:column>
-						</h:dataTable>
+							</div>
+						</div>
+
 					</h:form>
 
 
